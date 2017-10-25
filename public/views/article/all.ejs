@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>All Articles</title>
+    </head>
+    <body>
+       <h1>Article List</h1>
+<% console.log(articles) %>
+  <% for(var i=0; i<articles.length; i++) { %>
+    <h1> <%= articles[i]._id %> </h1>
+    <p>
+      <%= articles[i].user%>
+    </p>
+    <h3><%= articles[i].content%></h3>
+   
+    <% } %>
+    </body>
+</html>

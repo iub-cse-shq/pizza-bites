@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>New Article</title>
+    </head>
+    <body>
+        <h1>New Article</h1>
+        <input type= "text" id="title"/>
+        <textarea id= "content"></textarea>
+        <button id="submit">Submit</button>
+        <script src="/lib/vendor/jquery.min.js"></script>
+        <script>
+            var article = {title: "", content: ""}
+            $("#title").change(function(){
+                article.title = $("#title").val();
+            });
+            $("#content").change(function(){
+                article.content = $("#content").val();
+            });
+            $("#submit").click(function(){
+                console.log(article);
+                $.ajax({
+                    mathod: "POST",
+                    url: "/api/articles",
+                    data:article
+                }).done(function(respose)){
+                    console.log(response);
+                    
+                });
+            });
+        </script>
+        </body>
+</html>

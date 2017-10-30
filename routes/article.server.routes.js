@@ -9,10 +9,12 @@ app.route('/articles/new')
 app.route('/articles/all')
 .get(articles.all);
 
-app.route('/articles/edit/:articleId')
-.get(articles.view);
 
 app.route('/articles/:articleId')
+.get(articles.view);
+
+
+app.route('/articles/edit/:articleId')
 .get(articles.edit);
 
 //app.route()

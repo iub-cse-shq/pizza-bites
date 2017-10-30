@@ -25,38 +25,28 @@ var _ = require('lodash');
 });
 };
 exports.edit = function(req,res){
-  Article.find(function(err, data) {
-    if (err) {
-      return res.status(400).send({
 
-  				message: errorHandler.getErrorMessage(err)
-  			});
-    } else {
-      console.log("api called");
   res.render('./../public/views/articles/edit.ejs',{
     user:req.user || null,
-    request: req,
-    articles:data
+    request: req
   });
-    }
+    
+};
+exports.new = function(req,res){
+
+  res.render('./../public/views/articles/create.ejs',{
+    user:req.user || null,
+    request: req
   });
+    
 };
 exports.view = function(req, res){
-  Article.find(function(err, data) {
-    if (err) {
-      return res.status(400).send({
 
-  				message: errorHandler.getErrorMessage(err)
-  			});
-    } else {
-      console.log("api called");
   res.render('./../public/views/articles/view.ejs', {
     user:req.user || null,
-    request:req,
-    articles:data
+    request:req
   });
-    }
-  });
+
 };
 
 module.exports.list = function(req, res) {

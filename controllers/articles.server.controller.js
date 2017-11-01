@@ -3,7 +3,7 @@ var Article = require('./../models/Article.js');
 var errorHandler = require('./errors.server.controller');
 var _ = require('lodash');
 
-  exports.all = function(req, res) {
+exports.all = function(req, res){
   Article.find(function(err, data) {
     if (err) {
       return res.status(400).send({
@@ -13,41 +13,39 @@ var _ = require('lodash');
     } else {
       console.log("api called");
 
-     
-    
-
-  res.render('./../public/views/articles/all.ejs', {
-    user: req.user|| null,
-    request: req,
-    articles:data
+        res.render('./../public/views/article/all.ejs', {
+          user: req.user || null,
+          request: req,
+          articles: data
+        });
+    }
   });
-}
-});
+  
 };
-exports.edit = function(req,res){
 
-  res.render('./../public/views/articles/edit.ejs',{
-    user:req.user || null,
+exports.edit = function(req, res){
+  res.render('./../public/views/article/edit.ejs', {
+    user: req.user || null,
     request: req
   });
-    
 };
-exports.new = function(req,res){
 
-  res.render('./../public/views/articles/create.ejs',{
-    user:req.user || null,
-    request: req
-  });
-    
-};
 exports.view = function(req, res){
-
-  res.render('./../public/views/articles/view.ejs', {
-    user:req.user || null,
-    request:req
+  res.render('./../public/views/article/view.ejs', {
+    user: req.user || null,
+    request: req
   });
-
 };
+
+exports.new = function(req, res){
+  res.render('./../public/views/article/create.ejs', {
+    user: req.user || null,
+    request: req
+  });
+};
+
+
+
 
 module.exports.list = function(req, res) {
   Article.find(function(err, data) {

@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>All Arctile</title>
+    </head>
+    <body>
+        <h1>Product List</h1>
+        <% console.log(products) %>
+          <% for(var i=0; i<products.length; i++) { %>
+               <h1> <%= products[i]._id %> </h1>
+            <h1> <%= products[i].title %> </h1>
+          
+              <h3><%= products[i].content%></h3>
+            <h4><%= products[i].created%></h4>
+            <% } %>
+    </body>
+</html>

@@ -3,26 +3,20 @@
         <title>Edit Product</title>
     </head>
     <body>
-         <h1>All Articles</h1>
-        <% console.log(request.articles) %>
-        <h2> Name: <%= request.product.name %></h2>
-         <h2> Description: <%= request.product.description %></h2>
-          <h2> Price: <%= request.product.price %></h2>
-           <h2> Quantity: <%= request.product.quantity %></h2>
-        <p> <%= request.product.content %> </p>
+         
         
         <h1>New Product</h1>
         <div>Name:
-            <input type="text" id="name" value=<%request.product.name%> />
+            <input type="text" id="name" value="<%= request.product.name %>" />
         </div> <br>
         <div>Description:
-            <textarea id="description"> <%request.product.description%> </textarea>
+            <textarea id="description"> <%= request.product.description%> </textarea>
         </div> <br>
         <div>Price:
-            <input type="number" id="price" value=<%request.product.price%> />
+            <input type="number" id="price" value=<%=request.product.price%> />
         </div> <br>
         <div>Quantity:
-            <input type="number" id="quantity" value=<%request.product.quantity%> />
+            <input type="number" id="quantity" value=<%=request.product.quantity%> />
         </div> <br>
         <button id="submit">Submit</button>
         
@@ -54,6 +48,7 @@
                     data: product
                 }).done(function(response){
                     console.log(response);
+                    window.location.replace("/products/"+response._id);
                 });
             });
         </script>

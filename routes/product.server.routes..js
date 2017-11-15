@@ -9,7 +9,7 @@ module.exports = function(app){
  app.route('/products/all')
     .get(products.all);
     
- app.route('/products/edit/:productId')
+ app.route('/products/:productId')
     .get(products.view);
     
  app.route('/products/edit/:productId')

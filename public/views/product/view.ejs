@@ -1,15 +1,18 @@
 <html>
     <head>
-        <title>All Arctiles</title>
+        <title>Product</title>
     </head>
     <body>
-        <h1>All Articles</h1>
-        <% console.log(request.articles) %>
-        <h2> Name: <%= request.product.name %></h2>
-         <h2> Description: <%= request.product.description %></h2>
-          <h2> Price: <%= request.product.price %></h2>
-           <h2> Quantity: <%= request.product.quantity %></h2>
+        <h1>Product ID:  <%=request.product._id %></h1>
+        <% console.log(request.product)%>
+        <h2>Name: <%=request.product.name %></h2>
+        <h2>Description:  <%=request.product.description %></h2>
+        <h2>Price:  <%=request.product.price %></h2>
+        <h2>Quantity:  <%=request.product.quantity %></h2>
         <p> <%= request.product.content %> </p>
-        <p> <%= request.product.created %> </p>
+        
+        <p>
+            <h2> Date: <%= request.product.created %></h2> 
+            </p>
     </body>
 </html>

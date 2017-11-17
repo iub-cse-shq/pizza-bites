@@ -19,14 +19,16 @@ var ProductSchema = {
   
   price: {
     type: Number,
-    default: '0',
+    trim: true,
+    //default: '0',
     required: 'Price required'
 
   },
   
   quantity: {
     type: Number,
-    default: '1',
+    trim: true,
+    //default: '1',
     required: 'Quantity required'
 
   },

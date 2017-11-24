@@ -22,9 +22,35 @@ exports.all = function(req, res){
   });
   
 };
+exports.customerview = function(req, res){
+  Product.find(function(err, data) {
+    if (err) {
+      return res.status(400).send({
+
+  				message: errorHandler.getErrorMessage(err)
+  			});
+    } else {
+      console.log("api called");
+
+        res.render('./../public/views/product/Customerview.ejs', {
+          user: req.user || null,
+          request: req,
+          products: data
+        });
+    }
+  });
+  
+};
 
 exports.edit = function(req, res){
   res.render('./../public/views/product/edit.ejs', {
+    user: req.user || null,
+    request: req
+  });
+};
+
+exports.order = function(req, res){
+  res.render('./../public/views/order/order.ejs', {
     user: req.user || null,
     request: req
   });
@@ -38,10 +64,33 @@ exports.view = function(req, res){
 };
 
 exports.new = function(req, res){
-  res.render('./../public/views/product/create.ejs', {
+  res.render('./../public/views/product/Admin.ejs', {
     user: req.user || null,
     request: req
   });
+};
+
+
+exports.category = function(req, res) {
+  console.log(req.params.category);
+  Product.find({"category":req.params.category}, function(err, data) {
+    if (err) {
+      return res.status(400).send({
+
+          message: errorHandler.getErrorMessage(err)
+        });
+    } else {
+      console.log("api called");
+      console.log(data);
+
+      res.render('./../public/views/product/Customerview.ejs', {
+    		user: req.user || null,
+    		request: req,
+        products: data
+    	});
+    }
+  });
+
 };
 
 

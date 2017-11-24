@@ -1,3 +1,4 @@
+
 <!DOCTYPE html5>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -35,7 +36,7 @@
         data: user
       }).done(function(response){
         console.log(response);
-        window.location.replace('/');
+        window.location.replace('/products/all');
       }).fail(function(response){
         console.log(response);
         $("#error").text("Something went wrong! Try again.");

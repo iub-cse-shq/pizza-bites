@@ -9,32 +9,53 @@
             Create Products
         </h1>
         <div>Name:
-        <input type="name" id ="name"/>
+        <input type="name" id ="pname"/>
+        </div><br>
+        <div>Code
+        <input type="number" id ="code"/>
         </div><br>
         <div>Description:
-        <textarea id="description" ></textarea>
+        <textarea id="dsp" ></textarea>
         </div> <br>
+          <div>image:
+        <input type="name" id ="image"/>
+        </div><br>
         <div>Price:
         <input type="number" id ="price"/>
         </div><br>
-        <div>Quentity:
-        <input type="number" id ="quantity"/>
-        </div><br>
+        
+        
         <div id="error"></div>
         <button id="submit">Submit</button>
         <script src="/lib/jquery/dist/jquery.min.js"></script>
         <script>
-            var product={name :"" , description : "", price:null ,quantity:null};
-            $("#name").change(function()
+            var product={
+                name :"" ,
+                code:null,
+                description : "",
+                image:"",
+                price:null 
+                };
+            $("#pname").change(function()
             {
                
-                product.name= $("#name").val();
+                product.name= $("#pname").val();
+            
+            });
+             $("#code").change(function()
+            {
+                product.code= $("#code").val();
             
             });
             
-             $("#description").change(function()
+             $("#dsp").change(function()
             {
-                product.description= $("#description").val();
+                product.description= $("#dsp").val();
+            
+            });
+                $("#image").change(function()
+            {
+                product.image= $("#image").val();
             
             });
             
@@ -46,11 +67,7 @@
             });
             
             
-             $("#quantity").change(function()
-            {
-                product.quantity= $("#quantity").val();
             
-            });
             
             $("#submit").click(function(){
                 $.ajax({

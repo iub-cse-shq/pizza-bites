@@ -3,16 +3,20 @@
         <title>Product</title>
     </head>
     <body>
-        <h1>Product ID:  <%=request.product._id %></h1>
+        <div>
+        <img src= <%=request.product.image %>  width="300" height="200">
+        <h3>Product ID:  <%=request.product._id %></h3>
         <% console.log(request.product)%>
-        <h2>Name: <%=request.product.name %></h2>
-        <h2>Description:  <%=request.product.description %></h2>
-        <h2>Price:  <%=request.product.price %></h2>
-        <h2>Quantity:  <%=request.product.quantity %></h2>
+        <h4>Name: <%=request.product.name %></h4>
+        <h4>Description:  <%=request.product.description %></h4>
+        <h4>Price:  <%=request.product.price %></h4>
+        <h4>Code:  <%=request.product.code %></h4>
+        
         <p> <%= request.product.content %> </p>
         
         <p>
             <h2> Date: <%= request.product.created %></h2> 
             </p>
+            </div>
     </body>
 </html>

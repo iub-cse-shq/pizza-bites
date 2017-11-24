@@ -10,6 +10,7 @@ exports.index = function(req, res) {
 	});
 };
 
+
 exports.about = function(req, res) {
 	res.render('./../about.ejs', {
 		user: req.user || null,

@@ -10,6 +10,9 @@
 app.route('/product/orders/all')
     .get(orders.orderlist);
  
+ app.route('/product/orders/done')
+    .get(orders.done);
+ 
  app.route('/api/orders')
 	.get(orders.list)
 	.post(orders.create);

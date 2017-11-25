@@ -11,48 +11,6 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/untitled.css">
     <link rel="stylesheet" href="/assets/css/Pretty-Footer.css">
-    
-      <style>
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-input[type=number], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type=submit] {
-    width: 100px;
-    background-color: #e52325;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #002092;
-}
-h4{
-    color:Tomato;
-}
-
-
-</style>
-    
 </head>
 
 <body>
@@ -101,48 +59,15 @@ h4{
                 </div>
             </nav>
             <div class="row">
-                <div class="col-md-4 col-md-offset-1">
+                <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Description</h3></div>
+                            <h3 class="text-nowrap text-center text-info panel-title">Order Conformation</h3></div>
                         <div class="panel-body">
-                            <img src=<%=request.product.image%>   width="250" height="200">
-                    <h4>Pizza Name: <%=request.product.name%></h4>
-                    <h4>Pizza Description: <%=request.product.description%></h4>
-                    <h4>Pizza Category: <%=request.product.category%></h4>
-                    <h4>Pizza Size: <%=request.product.size%></h4>
-                    
-                    <h4>Pizza Price: <%=request.product.price%></h4>
-                        
-                        
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 col-md-offset-0">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">To Order Please Fill-up Below Form</h3></div>
-                        <div class="panel-body"><span></span>
-                        
-                         <label for="fname">Customer Name</label>
-                        <input type="text" id="cname"  placeholder="Customer Name">
-                        
-                        
-  
-
-                        <label for="lname">Adress</label>
-                        <input type="text" id="adress"  placeholder="Adress">
-
-                        <label for="phone">Phone</label>
-                        <input type="text" id="phone"  placeholder="Phone Number">
-                        
-                        
-                        
-                        
-                       
-                      
-                        <button id="submit" class="btn btn-default">Order</button>
-                        
+                            <div class="col-md-4 col-md-offset-4 col-xs-offset-2"><img class="img-responsive" src="/assets/img/index.png"></div>
+                            <div class="col-md-12">
+                                <h1 class="text-nowrap text-center text-muted">Your Order Created Successfully!</h1>
+                                <h3 class="text-center text-muted">Within 30 miniute you will get your product</h3></div>
                         </div>
                     </div>
                 </div>
@@ -177,72 +102,8 @@ h4{
             </footer>
         </div>
     </div>
-    
-    <script src="/lib/jquery/dist/jquery.min.js"></script>
-     <script>
- var order={
-                cname :"" ,
-                pname :"<%=request.product.name%>" ,
-                adress:"",
-                phone : "",
-                size:"<%=request.product.size%>",
-                price:<%=request.product.price%> 
-                };
-            $("#cname").change(function()
-            {
-               
-                order.cname= $("#cname").val();
-            
-            });
-             $("#pname").change(function()
-            {
-                order.pname= $("#pname").val();
-            
-            });
-            
-             $("#adress").change(function()
-            {
-                order.adress= $("#adress").val();
-            
-            });
-                $("#phone").change(function()
-            {
-                order.phone= $("#phone").val();
-            
-            });
-            
-             $("#size").change(function()
-            {
-                order.size= $("#size").val();
-            
-            });
-             $("#price").change(function()
-            {
-                 order.price=undefined;
-                order.price= $("#price").val();
-            
-            });
-            
-            
-            
-            
-            $("#submit").click(function(){
-                $.ajax({
-                    method: "POST",
-                    url: "/api/Orders",
-                    data: order  
-                    
-                }).done(function(response){
-                    console.log(response);
-                     window.location.replace("/product/orders/done"); 
-                }).fail(function(response){
-                    $("#error").text(JSON.parse(response.responseText).message);
-                   console.log(response); 
-                });
-                
-            });
- 
-  </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

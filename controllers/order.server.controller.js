@@ -36,6 +36,13 @@ exports.order = function(req, res){
   });
 };
 
+exports.done = function(req, res){
+  res.render('./../public/views/order/ordered.ejs', {
+    user: req.user || null,
+    request: req
+  });
+};
+
 
 module.exports.list = function(req, res) {
   Order.find(function(err, data) {

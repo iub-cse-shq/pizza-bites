@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var OrdertSchema = {
+var OrderSchema = {
 
   cname: {
     type: String,
@@ -12,7 +12,13 @@ var OrdertSchema = {
     type: String,
     default: '',
     trim: true,
-    required: 'Pizza Name required'
+    required: 'PizzaName required'
+  },
+    photo: {
+    type: String,
+    default: '',
+    trim: true,
+    required: 'photo required'
   },
 
   adress: {
@@ -58,5 +64,5 @@ var OrdertSchema = {
   }
 }
 
-var order = mongoose.model('Order', OrdertSchema, 'orders');
+var order = mongoose.model('Order', OrderSchema, 'orders');
 module.exports = order;

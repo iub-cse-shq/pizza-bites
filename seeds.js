@@ -9,7 +9,7 @@ var User = require('./models/User.js');
 //});
 
 var user = {
-    email: 'abc@def.com',
+    email: 'admin@pizzabite.com',
     password: '12345678',
     firstName: 'TD',
     lastName: 'BD',

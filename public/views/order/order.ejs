@@ -87,7 +87,7 @@ h4{
                             <li class="active" role="presentation"><a href="/products/allproduct/Beef">BEEF </a></li>
                             <li class="active" role="presentation"><a href="/products/allproduct/Chicken">CHICKEN </a></li>
                             <li class="active" role="presentation"><a href="/products/allproduct/Vegetable">VEGETABLE </a></li>
-                            <li class="active" role="presentation"><a href="#">PiZza-BiteS! Special</a></li>
+                            <li class="active" role="presentation"><a href="/products/allproduct/Chesse ">PiZza-BiteS! Special</a></li>
                                 <ul class="dropdown-menu" role="menu">
                                     <li role="presentation"><a href="#">Fries </a></li>
                                     <li role="presentation"><a href="#">Salads</a></li>
@@ -177,12 +177,14 @@ h4{
             </footer>
         </div>
     </div>
-    
+     <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="/lib/jquery/dist/jquery.min.js"></script>
      <script>
  var order={
                 cname :"" ,
                 pname :"<%=request.product.name%>" ,
+                photo:"<%=request.product.image%>",
                 adress:"",
                 phone : "",
                 size:"<%=request.product.size%>",

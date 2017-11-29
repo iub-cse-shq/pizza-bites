@@ -5,13 +5,16 @@
  var users = require('./../controllers/users.server.controller.js');
  
  
- app.route('/orders/:productId').get(orders.orderByID);
+
  
 app.route('/product/orders/all')
     .get(orders.orderlist);
  
  app.route('/product/orders/done')
     .get(orders.done);
+    
+ app.route('/product/ordered/:orderId')
+    .get(orders.view);
  
  app.route('/api/orders')
 	.get(orders.list)

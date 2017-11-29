@@ -61,7 +61,7 @@ input[type=submit]:hover {
                         <ul class="dropdown-menu" role="menu">
                             <li role="presentation"><a href="#">Setting </a></li>
                             <li role="presentation"><a href="#">Help </a></li>
-                            <li role="presentation"><a href="#">Logout </a></li>
+                            <li role="presentation"><a href="/signin">Logout </a></li>
                         </ul>
                     </li>
                     
@@ -72,9 +72,9 @@ input[type=submit]:hover {
     <div class="row">
         <div class="col-md-2">
             <ul class="nav nav-pills nav-stacked">
-                 <li class="active"><a href="https://pizza-bites-shamahoque.c9users.io/products/new">New Product </a></li>
-                <li class="active"><a href="https://pizza-bites-shamahoque.c9users.io/products/all">Available Product </a></li>
-                <li class="active"><a href="#">Orderd Item</a></li>
+                 <li class="active"><a href="/products/new">New Product </a></li>
+                <li class="active"><a href="/products/all">Available Product </a></li>
+                <li class="active"><a href="/product/orders/all">Orderd Item</a></li>
                 <li class="active"><a href="#">Promotion </a></li>
             </ul>
         </div>
@@ -136,8 +136,8 @@ input[type=submit]:hover {
             </div>
         </div>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="/lib/jquery/dist/jquery.min.js"></script>
      <script>
         
@@ -188,7 +188,7 @@ input[type=submit]:hover {
                     window.location.replace("/products/edit/"+response._id);
                 });
             });
-                     $('#delete').click(function(){
+             $('#delete').click(function(){
             $.ajax({
               method:"DELETE",
               url:'/api/products/'+productID,

@@ -1,3 +1,13 @@
+
+
+* PiZza-BiteS! is a web application which provides the Pizza ordering system through online. 
+ Nowadays there are lots of online food ordering websites but this application will only can 
+ be used to order pizza through online. Pizza-Bites is a web application through which a customer 
+ can view available pizzas their prices & size. Customer can order pizza anytime by providing their
+ required information. There is also a admin page by which a admin can delete a order, add new pizzas,
+ delete pizzas, updates prices etc.
+
+
 **How to set up the code**
 
 1. Install [Node.js](https://nodejs.org/en/download/) and [MongoDB](https://www.mongodb.com/download-center?jmp=nav) on your computer
